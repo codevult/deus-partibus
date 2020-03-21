@@ -1,13 +1,13 @@
 html {
     font-size: 16px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
     background-color: black;
+    scroll-behavior: smooth;
 }
 
 body {
-    max-width: inherit;
-    
+    margin: 0;
 }
 
 section {
@@ -26,12 +26,15 @@ header {
     padding: 1rem 0 1rem 0;
     height: 100px;
     width: 100%;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #menu {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    height: 100px;
 }
 
 #menu ul {
@@ -44,6 +47,8 @@ header {
     font-size: 1.5rem;
     margin: 0 1.5rem;
 }
+
+
 
 #menu a {
     text-decoration: none;
@@ -61,8 +66,13 @@ header {
     filter: drop-shadow(4px 4px 4px rgb(0, 0, 0));
 }
 
+#logoa {
+    height: 60px;
+    margin-top: 20px;
+}
+
 .logo img {
-    height: 90px;
+    height: 60px;
     -webkit-filter: drop-shadow(0px 0px 0px rgba(255,255,255,0.80));
     filter: drop-shadow(0px 0px 0px rgba(255,255,255,0.80));
 	-webkit-transition: all 0.5s linear;
@@ -75,13 +85,111 @@ header {
     filter: drop-shadow(4px 4px 4px rgb(32, 0, 0));
 }
 
+footer {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    color: white;
+}
+
+.fthead {
+    flex-direction: row;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.ftwrap {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ftcol1, .ftcol2, .ftcol3 {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 28%;
+}
+
+.ftcol1 p {
+    margin-bottom: 2em;
+}
+
+.ftcol1 a {
+    background-color: tomato;
+    text-decoration: none;
+    padding: 0.4em;
+    color: white;
+    width: 30%;
+    text-align: center;
+}
+
+.form {
+    justify-content: left;
+}
+
+.ftcol3 form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+#fname, #lname, #email, #message {
+    margin: 10px 0;
+    height: 2rem;
+}
+
+#message {
+    height: 6rem;
+}
+
+#formsubmit {
+    margin-top: 20px;
+    width: 40%;
+    padding: 0.5rem 0;
+    background-color: tomato;
+    border: none;
+}
+
+#formsubmit:hover {
+    cursor: pointer;
+}
+
+
+.copyrightprivacy {
+    display: flex;
+    background-color: white;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+}
+
+.copyright {
+    justify-content: flex-start;
+}
+
+.privacy {
+    justify-content: flex-end;
+}
+
+.copyright a,
+.privacy a {
+    text-decoration: none;
+    color: tomato;
+    font-weight: 700;
+}
+
+/*index.html*/
 
 .herotext {
     background-color: rgba(255, 255, 255, 0.137);
     flex-direction: column;
     width: 30%;
     position: absolute;
-    top: 600px;
+    top: 270px;
     max-height: 500px;
     font-size: 150%;
     padding: 1rem;
@@ -98,24 +206,481 @@ header {
 .herotext a {
     text-decoration: none;
     background-color: tomato;
+    padding: 10px 0;
 }
 
 .hero {
     display: flex;
     overflow: hidden;
+    height: 700px;
+}
+
+.hero img {
+    object-fit: cover;
+    margin: 0;
+    width: 100%;
 }
 
 .one {
     display: flex;
     overflow: hidden;
+    height: 500px;
 }
 
+.onetext {
+    background-color: rgba(255, 255, 255, 0.137);
+    flex-direction: column;
+    width: 30%;
+    position: absolute;
+    top: 900px;
+    right: 70px;
+    max-height: 500px;
+    font-size: 150%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.one a{
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0;
+}
 .one img {
+    object-fit: cover;
+    width: 100%;
+
+}
+
+.two {
+    flex-direction: column;
+    min-height: 500px;
+
+}
+
+.twohead {
+    width: 100% ;
+    text-align: center;
+    font-size: 200%;
+    color: white;
+    margin: 0 0 1rem 0;
+}
+
+.twowrap {
+    display: flex;
+    color: white;
+    padding: 1rem;
+    /*
+    flex-wrap: wrap;
+    color: white;
+    min-height: 500px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2em;
+    */
+}
+
+.posts {
+    flex-direction: column;
+    width: 20%;
+    padding: 0 1em;
+}
+
+.posts a {
+    color: white;
+    background-color: blue;
+    text-decoration: none;
+    width: 50%;
+    padding: 1em 0.5em;
+    text-align: center;
+}
+
+.three {
+    display: inline-flex;
+    overflow: hidden;
+    height: 300px;
+}
+
+.three img {
+    width: 10%;
+    object-fit: cover;
+}
+
+
+.four {
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    background-color: white;
+}
+
+.testamenthead {
+    width: 100%;
+    font-size: 200%;
+    color: black;
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+.fourwrap {
+    color: black;
+    padding: 1em;
+}
+
+.testament {
+    
+    padding: 1rem;
+    width: 20%;
+}
+
+/*
+.testament h2,
+.testament p {
+}
+*/
+
+.fivetext {
+    background-color: tomato;
+    flex-direction: column;
+    width: 100%;
+    font-size: 100%;
+    padding: 1rem 0;
+}
+
+.fivetext h1 {
+    text-align: center;
+}
+
+.five {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.five img {
+ width: 33.33333%;
+ object-fit: cover;
+}
+
+.six {
+    color: white;
+}
+
+@media only screen and (max-width: 1128px) {
+    #menu li {
+        display: flex;
+        list-style-type: none;
+    }
+    
+    .five img {
+        width: 50%;
+    }
+
+}
+/*about.html*/
+.who {
+    display: flex;
+    background-color: rgb(184, 184, 184);
+    color: black;
+    justify-content: space-evenly;
+    min-height: 500px;
+}
+
+.whotext {
+    padding: 2rem;
+    align-self: center;
+}
+
+.who img {
+    padding: 2rem;
+    align-self: center;
+}
+
+.why {
+    display: flex;
+    background-color: white;
+    color: black;
+    justify-content: space-evenly;
+    min-height: 500px;
+
+}
+
+.whytext {
+    padding: 2rem;
+    align-self: center;
+}
+
+.why img {
+    padding: 2rem;
+    align-self: center;
+}
+
+.passion {
+    display: flex;
+    overflow: hidden;
+    height: 500px;
+    align-items: flex-end;
+}
+
+.passion img {
+    object-fit: cover;
+    width: 100%;
+}
+
+/*events.html*/
+
+.eventbanner {
+    background-color: white;
+    color: white;
+    margin: 0;
+}
+
+.eventbanner h1 {
+    background-color: white;
+    margin: auto;
+    padding: 2vh;
+    text-align: center;
+    color: red;
+    width: 80%;
+}
+
+.eventwrap {
+    display: flex;
+    justify-content: center;
+    background-image: url("resources/images/events/simon-boxus-We02LAPNpa8-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 8vh;
+}
+
+.events {
+    color: black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 70vw;
+    height: 70vh;
+    text-align: center;
+
+  }
+
+table img {
     width: 100%;
     height: auto;
 }
 
-.two {
-    display: flexbox;
-    overflow: hidden;
+th {
+    background-color: tomato;
+}
+
+tr {
+    background-color: white;
+}
+
+tr:hover {
+    background-color: rgb(255, 148, 129);
+}
+
+td {
+    width: 20%;
+    padding: 0;
+    margin: 0;
+}
+
+
+td a {
+    text-decoration: line-through;
+    color: rgb(255, 0, 0);
+    font-weight: 900;
+}
+
+
+/*gallery.html*/
+
+.gallerybod {
+    background-color: white;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+}
+
+.gallerycontainer {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.gallery h1 {
+    margin: 0;
+    padding: 2vh;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#twoimg,
+#threeimg {
+    display: inline-flex;
+    justify-content: space-between;
+    margin-bottom: 1.5%;
+
+}
+
+#twoimg img{
+    width: 49%;
+    height: auto;
+}
+
+#threeimg img {
+    width: 32%;
+    height: auto;
+}
+
+
+/*shop.html*/
+
+.shopbod {
+    background-color: white;
+}
+
+.shop {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.productsec {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+}
+
+.card {
+    margin: 1.5rem;
+    width: 25%;
+    text-align: center;
+}
+
+.card img {
+    object-fit: cover;
+    width: 20vw;
+    height: 30vh;
+}
+
+.card button {
+    border: none;
+    background-color: tomato;
+    padding: 0.5rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.shopend {
+    text-align: center;
+    padding: 3rem;
+}
+
+.shopend p {
+    margin: 0;
+}
+
+/*contact.html*/
+
+.contacthtml {
+    background-color: white;
+}
+
+.contact {
+    padding: 2rem;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.contactcol1 p {
+    margin-bottom: 2em;
+}
+
+.contactcol1 a {
+    background-color: tomato;
+    text-decoration: none;
+    padding: 0.4em;
+    color: white;
+    width: 30%;
+    text-align: center;
+}
+
+.contactcol2 form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: left;
+}
+
+#ctfname, #ctlname, #ctemail, #ctmessage {
+    margin: 10px 0;
+    height: 2rem;
+}
+
+#ctmessage {
+    height: 6rem;
+}
+
+#ctformsubmit {
+    margin-top: 20px;
+    width: 40%;
+    padding: 0.5rem 0;
+    background-color: tomato;
+    border: none;
+}
+
+#ctformsubmit:hover {
+    cursor: pointer;
+}
+
+#ctfooter {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.ctfthead {
+    background-color: black;
+    text-align: center;
+    padding: 2rem 0;
+    margin: 0;
+}
+
+.ctcopyrightprivacy {
+    display: flex;
+    background-color: white;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+}
+
+.ctcopyright {
+    justify-content: flex-start;
+}
+
+.ctprivacy {
+    justify-content: flex-end;
+}
+
+.ctcopyright a,
+.ctprivacy a {
+    text-decoration: none;
+    color: tomato;
+    font-weight: 700;
 }
