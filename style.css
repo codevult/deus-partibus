@@ -4,6 +4,7 @@ html {
     margin: 0;
     background-color: black;
     scroll-behavior: smooth;
+    flex-wrap: wrap;
 }
 
 body {
@@ -25,7 +26,7 @@ header {
     background-color: white;
     padding: 1rem 0 1rem 0;
     height: 100px;
-    width: 100%;
+    width: auto;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -37,20 +38,21 @@ header {
     height: 100px;
 }
 
-#menu ul {
+#menu ul,
+.mobilemenu ul {
     margin: 0;
     padding: 0;
 }
 
-#menu li {
+#menu li,
+.mobilemenu li {
     display: inline-flex;
     font-size: 1.5rem;
     margin: 0 1.5rem;
 }
 
-
-
-#menu a {
+#menu a,
+.mobilemenu a {
     text-decoration: none;
     color: black;
     -webkit-filter: drop-shadow(0px 0px 0px rgba(255,255,255,0.80));
@@ -60,10 +62,15 @@ header {
 	transition: all 0.5s linear;
 }
 
-#menu a:hover {
+#menu a:hover,
+.mobilemenu a:hover {
     font-weight: 600;
     -webkit-filter: drop-shadow(4px 4px 4px rgb(0, 0, 0));
     filter: drop-shadow(4px 4px 4px rgb(0, 0, 0));
+}
+
+.mobilemenu {
+    display: none;
 }
 
 #logoa {
@@ -84,6 +91,9 @@ header {
     -webkit-filter: drop-shadow(4px 4px 4px rgb(32, 0, 0));
     filter: drop-shadow(4px 4px 4px rgb(32, 0, 0));
 }
+
+
+
 
 .pagehead {
     background-color: white;
@@ -193,6 +203,7 @@ footer {
     color: tomato;
     font-weight: 700;
 }
+
 
 /*index.html*/
 
@@ -386,7 +397,7 @@ footer {
     display: flex;
     background-color: rgba(0, 0, 0, 0.651);
     width: 100%;
-    padding: 10rem 0;
+    padding: 1rem 0;
 }
 
 #howoverlay {
@@ -480,19 +491,19 @@ footer {
 
 table {
     border-collapse: collapse;
-    width: 70vw;
-    height: 70vh;
     text-align: center;
   }
 
 table img {
     display: block;
-    width: 250px;
+    width: 100%;
+    margin: auto;
 }
 
 th {
-    background-color: tomato;
+    background-color: black;
     padding: 1rem 0;
+    color: white;
 }
 
 tr {
@@ -579,21 +590,21 @@ td a {
 
 .card {
     margin: 1.5rem;
-    width: 25%;
+    max-width: 220px;
     text-align: center;
 }
 
 .card img {
     object-fit: cover;
-    width: 20vw;
-    height: 30vh;
+    width: 220px;
+    height: 300px;
 }
 
 .card button {
     border: none;
     background-color: tomato;
     padding: 0.5rem;
-    width: 100%;
+    width: 50%;
     cursor: pointer;
 }
 
@@ -652,6 +663,9 @@ td a {
     width: 40%;
     padding: 0.5rem 0;
     background-color: tomato;
+    color: white;
+    font-family: 'Montserrat', 'Raleway', sans-serif;
+    font-size: 1rem;
     border: none;
 }
 
@@ -667,7 +681,6 @@ td a {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
 }
 
 .ctfthead {
@@ -701,6 +714,266 @@ td a {
 }
 
 
-@media only screen and (max-width: 245px) {
+
+/*Base media queries*/
+
+@media only screen and (max-width: 1440px) {
+    header {
+        display: block;
+        height: 80px;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .mobilemenu {
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0 0 0 ;
+
+    }
+
+    .mobilemenu li {
+        display: inline-flex;
+        font-size: 1rem;
+    }
+
+    #logoa, 
+    .logo img {
+        height: 40px;
+        text-align: center;
+    }
+
+    .ftwrap {
+        display: block;
+    }
+
+    .ftcol1, .ftcol2, .ftcol3 {
+        width: 70%;
+        margin: auto;
+
+    }
+
+    .ftcol3 form {
+        width: 80%;
+    }
+
+    .herotext {
+        width: 60%;
+    }
+
+    .onetext {
+        top: 850px;
+        width: 50%;
+    }
+
+    .two {
+        padding: 2rem 0;
+    }
+
+    .twowrap {
+        flex-wrap: wrap;
+    }
+
+    .posts {
+        width: 40%;
+    }
+
+    .posts p {
+        padding-right: 3rem;
+    }
+
+    .events {
+        width: 100%;
+    }
+
+    .eventwrap {
+        padding: 2rem;
+    }
+
+    table, thead, tbody, th, td, tr { 
+		display: block; 
+    }
     
+    	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+    tr {
+        border: 0.1px solid rgba(211, 211, 211, 0.151);
+        padding-bottom: 2rem;
+    }
+
+    table img {
+        width: 100%;
+    }
+
+    td { 
+		/* Behave  like a "row" */
+		border: none;
+		position: relative;
+        padding-bottom: 1rem;
+        width: 100%;
+    }
+    
+    td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		left: 6px;
+		width: 50%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+    }
+    
+    	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: ""; }
+	td:nth-of-type(2):before { content: "Date"; }
+	td:nth-of-type(3):before { content: "Event"; }
+	td:nth-of-type(4):before { content: "Venue"; }
+    td:nth-of-type(5):before { content: "Tickets"; }
+    
+
+    #ctfooter {
+        position: static;
+        margin-top: 1rem;
+    }
+
+    .contactcol1,
+    .contactcol3 {
+        align-items: center;
+    }
+
+    .contactcol1 p {
+        text-align: center;
+    }
+
+    .contactcol2 form{
+        width: 100%;
+    }
+
+    .contactcol2 h1 {
+        text-align: center;
+    }
+
+    #ctformsubmit {
+        align-self: center;
+    }
 }
+
+@media only screen and (max-width: 660px) {
+    header {
+        height: 6rem;
+    }
+
+    .mobilemenu {
+        display: block;
+        width: 100%;
+        padding: 1rem 0 1rem 0;
+    }
+
+    .mobilemenu ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .ftcol1, .ftcol2, .ftcol3 {
+        width: 90%;
+        margin: auto;
+
+    }
+
+    .ftcol3 form {
+        width: 100%;
+    }
+
+    .hero {
+        height: 500px;
+    }
+
+    .herotext {
+        top: 200px;
+        width: 80%;
+    }
+
+    .one {
+        display: none;
+    }
+
+    /*
+    .onetext {
+        width: 80%;
+        margin: auto;
+        top: 670px;
+        right: auto;
+    }
+    */
+
+    .two {
+        padding: 2rem 0;
+    }
+
+    .twohead {
+        font-size: 1.7rem;
+    }
+
+    .twowrap {
+        flex-wrap: wrap;
+    }
+
+    .posts {
+        width: 90%;
+        align-items: center;
+    }
+
+    .posts p {
+        padding: 0 2rem;
+        text-align: center;
+    }
+
+    .mobhide {
+        display: none;
+    }
+
+    .three img {
+        width: 16.6% ;
+    }
+
+    .testament {
+        width: 50%;
+    }
+
+    .eventwrap {
+        padding: 1.5rem;
+    }
+
+    .events {
+        width: 100%;
+    }
+
+    td {
+        width: 100%;
+        padding: 0 0 1rem 0;
+    }
+
+    td:before {
+        width: 30%;
+        top: 2px;
+
+    }
+
+    td a {
+    }
+
+    table img {
+        width: 100%;
+    }
+
+}
+
